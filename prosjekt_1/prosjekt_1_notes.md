@@ -29,5 +29,9 @@
     1. If INPUT = RANDOM-NUMBER, exit loop, print win message
     2. If INPUT =/ RANDOM-NUMBER, LIVES - 1, return.
 
-*Potantial things to add*
-- "Want to try again?" message on loss
+*To Do*
+- Make error free inputs (If the user types numbers instead of letters and vice versa)
+
+*Potential things to add*
+- Option to exit mid game
+- Introduction? (Tutorial thing)
