@@ -20,14 +20,14 @@
 
 1. Start main loop
 2. Explain game rules, request input.
-    2.1 If input is yes, proceed with game, start next loop.
-    2.2 If input is no, stop the game
+    1. If input is yes, proceed with game, start next loop.
+    2. If input is no, stop the game
 3. Start loop. Check if LIVES = 0
-    3.1 If lives = >0, continue
-    3.2 If lives = 0, print lose message.
+    1. If lives = >0, continue
+    2. If lives = 0, print lose message.
 4. Ask for user input. 
-    4.1 If INPUT = RANDOM-NUMBER, exit loop, print win message
-    4.2 If INPUT =/ RANDOM-NUMBER, LIVES - 1, return.
+    1. If INPUT = RANDOM-NUMBER, exit loop, print win message
+    2. If INPUT =/ RANDOM-NUMBER, LIVES - 1, return.
 
 *Potantial things to add*
 - "Want to try again?" message on loss
