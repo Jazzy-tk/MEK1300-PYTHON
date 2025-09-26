@@ -17,10 +17,10 @@ while restart == "yes":
     while player_guess != random_number and attempts != 0:
         player_input = input("Pick a number between 1 and 100: \n")   #endret her, tok vekk int og endret navn fra guess til input
 
-        if player_input.isdigit():       #La til her
+        if player_input.isdigit() and int(player_input) > 1 and int(player_input) < 100:       #La til her
             player_guess = int(player_input)  #La til her
         else: #La til her
-            print('Please type in a number') #La til her
+            print('That is not a number between 1 and 100') #La til her
             continue #La til her
 
         # For testing
