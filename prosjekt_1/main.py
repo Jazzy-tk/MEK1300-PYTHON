@@ -2,27 +2,35 @@ import random
 
 print("This is a number guessing game. Pick a number between 1 and 100. You have 5 tries")
 
-restart = input("Ready to start? (Yes/No): ")
-restart = restart.lower()
+restart ='' #La til her
+while restart != 'yes' and restart != 'no':    #La til her
+    restart = input("Ready to start? (Yes/No): ")
+    restart = restart.lower()
 
 while restart == "yes":
     attempts = 5
     player_guess = 0
-    random_number = random.randint(2, 99)
+    random_number = random.randint(1, 100)
 
     print("You have 5 attempts.")
 
     while player_guess != random_number and attempts != 0:
-        player_guess = int(input("Pick a number between 1 and 100: \n"))
+        player_input = input("Pick a number between 1 and 100: \n")   #endret her, tok vekk int og endret navn fra guess til input
+
+        if player_input.isdigit():       #La til her
+            player_guess = int(player_input)  #La til her
+        else: #La til her
+            print('Please type in a number') #La til her
+            continue #La til her
 
         # For testing
         print(random_number)
 
         if player_guess == random_number:
+            print('You guessed the right number')
             break
-
         if player_guess > random_number:
-           position = "above"
+            position = "above"
         elif player_guess < random_number:
             position = "below"
 
@@ -30,7 +38,7 @@ while restart == "yes":
 
         if attempts > 0:
             print("You guessed wrong. Your number is ", position, " the random one. \nYou have ", attempts, " attempts left")
- 
+
     if player_guess != random_number:
         print("Sorry! You did not manage to guess the number. You have reached the guessing limit.")
         restart = input("Want to try again? (Yes/No):\n")
