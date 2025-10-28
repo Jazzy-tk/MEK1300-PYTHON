@@ -1,0 +1,96 @@
+
+username_password = {'Username': 'MEK1300', 'Password': 'Python'}
+
+questions = ['What is the capital of Norway?', 'What is the currency of Norway?', 'What is the largest city in Norway?', 'When is constitution day (the national day) of Norway?','What color is the background of the Norwegian flag?', 'How many countries does Norway border?', 'What is the name of the university in Trondheim?', 'How long is the border between Norway and Russia?', 'Where in Norway is Stavanger?', 'From which Norwegian city did the world’s famous composer Edvard Grieg come?']
+
+answersA = ['Bergen', 'Euro', 'Oslo', '27th May','Red', 1, 'UiS', '96 km', 'North', 'Oslo']
+
+answersB = ['Oslo', 'Pound', 'Stavanger', '17th May', 'White', 2, 'UiO', '196 km', 'South', 'Bergen']
+
+answersC = ['Stavanger', 'Krone', 'Bergen', '17th April', 'Blue', 3, 'NMBU', '296 km', 'South-west', 'Stavanger']
+
+answersD = ['Trondheim', 'Deutsche Mark', 'Trondheim', '27th April', 'Yellow', 4, 'NTNU', '396 km', 'South-east', 'Tromsø']
+
+
+
+login = ''
+
+def login_info(usernameA, passwordA):
+    if usernameA == username_password['Username'] and passwordA == username_password['Password']:
+        global login
+        login = 'Valid'
+        
+
+usernameB = input('Username: ')
+passwordB = input('Password: ')
+
+login_info(usernameB, passwordB)
+
+while login != 'Valid':
+    print('')
+    print('Invalid username and/or password')
+    usernameB = input('Username: ')
+    passwordB = input('Password: ')
+    login_info(usernameB, passwordB)
+    
+user_answers = []
+correct_answers = ['Oslo','Krone','Oslo','17th May','Red', 3, 'NTNU', '196 km', 'South-west', 'Bergen']
+    
+if login == 'Valid':
+    for i in range(0, len(questions)):
+        print('')
+        print(i+1, questions[i])
+        a =  answersA[i]
+        b =  answersB[i]
+        c =  answersC[i]
+        d =  answersD[i]
+        print('a. ',a)
+        print('b. ',b)
+        print('c. ',c)
+        print('d. ',d)
+        answer = input('Which of these answers are correct: ')
+        answer = answer.lower()
+        while answer != 'a' and answer != 'b' and answer != 'c' and answer != 'd':
+            answer = input('You have to choose between a, b, c or d, try again: ')
+            answer = answer.lower()
+        if answer == 'a':
+            answer = answersA[i]
+        elif answer == 'b':
+            answer = answersB[i]
+        elif answer == 'c':
+            answer = answersC[i]
+        else:
+            answer = answersD[i]
+        user_answers.append(answer)
+        
+        
+poeng = 0
+incorrect = 0
+print('')
+print('These are the questions you got wrong: ')
+print('')
+for i in range(0, len(correct_answers)):
+    if user_answers[i] == correct_answers[i]:
+        poeng = poeng + 1
+    else:
+        incorrect = incorrect + 1
+        print('')
+        print(i+1, questions[i])
+        print('Your answer on this question was', user_answers[i], 'which is incorrect')
+        print('Correct answer: ', correct_answers[i])
+        
+print('')
+print('Amount of correct answers: ',poeng, '/10')
+print('Amount of incorrect answers: ',incorrect, '/10')
+    
+
+    
+
+    
+
+
+    
+    
+
+
+
